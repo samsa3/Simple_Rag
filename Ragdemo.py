@@ -39,7 +39,6 @@ def rerank_chunks(query, chunks, top_k=5):
 
 input_query = input("I am the cat man. Ask me anything about cats: ")
 retrieved_knowledge = rerank_chunks(input_query, retrieve_similar_chunks(input_query, top_k=10), top_k=5)
-print(rerank_chunks(input_query, retrieve_similar_chunks(input_query, top_k=10), top_k=5))
 
 Instruction_prompt = f""" you are a cat expert. Use the following knowledge to answer questions. \n\n 
 knowledge: {'\n'.join([f' - {chunk}' for chunk, _ in retrieved_knowledge])} 
